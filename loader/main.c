@@ -217,11 +217,6 @@ static int loader(const struct shell *sh) {
 	}
 #endif
 
-/* Do not start sketch for gertrude bringup */
-//#if defined(CONFIG_BOARD_ARDUINO_GERTRUDE) && !defined(CONFIG_SHELL)
-//    return 0;
-//#endif
-
 	size_t sketch_buf_len = sketch_hdr->len;
 
 #if TARGET_HAS_USB_CDC
