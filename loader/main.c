@@ -155,7 +155,7 @@ static int loader(const struct shell *sh) {
 		// This is not a valid sketch, but try to start a shell anyway
 	}
 
-#if defined(CONFIG_BOARD_ARDUINO_UNO_Q) || defined(CONFIG_BOARD_ARDUINO_GERTRUDE)
+#if defined(CONFIG_BOARD_ARDUINO_UNO_Q) || defined(CONFIG_BOARD_ARDUINO_GERTRUDE) || defined(CONFIG_BOARD_ARDUINO_VENTUNO_Q)
 	void matrixBegin(void);
 	void matrixEnd(void);
 	void matrixPlay(uint8_t *buf, uint32_t len);
