@@ -10,10 +10,9 @@
 #include <zephyr/usb/usb_device.h>
 #include <SerialUSB.h>
 
-#if ((DT_NODE_HAS_PROP(DT_PATH(zephyr_user), cdc_acm)) &&                                          \
-	 (CONFIG_USB_CDC_ACM || CONFIG_USBD_CDC_ACM_CLASS))
+#if ZARD_FIRST_SERIAL_IS_SERIALUSB
 const struct device *const usb_dev =
-	DEVICE_DT_GET(DT_PHANDLE_BY_IDX(DT_PATH(zephyr_user), cdc_acm, 0));
+	DEVICE_DT_GET(DT_PHANDLE_BY_IDX(DT_PATH(zephyr_user), cdc_acm_serial, 0));
 
 
 // TODO: replace this with something like https://github.com/CANnectivity/cannectivity/blob/f87aecab7b29704c07d255dc9f68097a1f4e1f60/app/src/usb.c#L459-L460
